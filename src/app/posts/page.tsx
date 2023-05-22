@@ -6,7 +6,7 @@ import { dehydrate } from '@tanstack/react-query';
 
 export default async function PostsPage() {
   const queryClient = getQueryClient();
-  await queryClient.prefetchQuery(['posts'], getPostsQueryFn);
+  await queryClient.prefetchInfiniteQuery(['posts'], getPostsQueryFn);
   const dehydratedState = dehydrate(queryClient);
 
   return (
